@@ -1,7 +1,6 @@
 morsecode=str(input())
 morsecode+=" "
-MORSE_CODE_DICT = {'A':'.-', 'B':'-...', 
-                    'C':'-.-.', 'D':'-..', 'E':'.', 
+MORSE_CODE_DICT = {'A':'.-', 'B':'-...','C':'-.-.', 'D':'-..', 'E':'.', 
                     'F':'..-.', 'G':'--.', 'H':'....', 
                     'I':'..', 'J':'.---', 'K':'-.-', 
                     'L':'.-..', 'M':'--', 'N':'-.', 
@@ -15,18 +14,11 @@ MORSE_CODE_DICT = {'A':'.-', 'B':'-...',
                     '0':'-----', ', ':'--..--', '.':'.-.-.-', 
                     '?':'..--..', '/':'-..-.', '-':'-....-', 
                     '(':'-.--.', ')':'-.--.-'}
-citext=''
-decipher=''
-for letter in morsecode:  
-  # checks for space 
-    if (letter != ' '): 
-        i = 0
-        citext += letter 
+citext='';decipher=''
+for letter in morsecode: 
+    if (letter != ' '): i = 0;citext += letter 
     else: 
         i += 1
-        if i == 2 : 
-            decipher += ' '
-        else: 
-            decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
-            citext = '' 
+        if i == 2 : decipher += ' '
+        else: decipher += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)];citext = '' 
 print(decipher) 
