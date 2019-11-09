@@ -1,12 +1,8 @@
-def reverse (num):
-    rev = 0
-    while(num > 0):r=num%10;rev=rev*10+r;num//=10
-    return rev
-x,y=input().split()
-if(x[0]=='-'):x='-'+x[1:][::-1]
-else: x=x[::-1]
-if(y[0]=='-'):y='-'+y[1:][::-1]
-else: y=y[::-1]
-if(x[0]=='-'and y[0]=='-'and x<=y):print(x)
-elif(x>=y):print(x)
-else: print(y)
+x,y=input().split();ansx='';ansy=''
+if(x[0]=='-'):ansx='-'+x[1:][::-1];x=-float(x[1:][::-1])
+else: ansx=x[::-1];x=float(ansx)
+if(y[0]=='-'):ansy='-'+y[1:][::-1];y=-float(y[1:][::-1])
+else: ansy=y[::-1];y=float(ansy)
+if(x>=y):print(ansx)
+#elif(x>=y):print(x)
+else: print(ansy)
